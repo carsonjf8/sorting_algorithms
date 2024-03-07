@@ -1,5 +1,4 @@
 TODO:
-    Selection Sort
     Bubble Sort
     Insertion Sort
     Merge Sort
@@ -8,5 +7,7 @@ TODO:
     Radix Sort
     Sleep Sort
     Bogo Sort
+    add option for whether to sort in place or not
 
 Completed:
+    Selection Sort
