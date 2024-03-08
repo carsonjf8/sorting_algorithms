@@ -1,5 +1,11 @@
 from typing import Callable, List, NoReturn
 from selection_sort import selection_sort
+from insertion_sort import insertion_sort
+
+SORTING_FUNC_DICT = {
+    'Selection Sort': selection_sort,
+    'Insertion Sort': insertion_sort
+}
 
 TEST_CASES_INPUT = [
     [],
@@ -25,6 +31,12 @@ def test(sort_func: Callable) -> NoReturn:
     for (input_data, sorted_data) in zip(TEST_CASES_INPUT, TEST_CASES_OUTPUT):
         test_case(sort_func, input_data, sorted_data)
 
-print('Testing Selection Sort...')
-test(selection_sort)
-print('...Done')
+def test_all_sorters() -> NoReturn:
+    for sort_func in SORTING_FUNC_DICT:
+        print('Testing ' + sort_func + '...')
+        test(SORTING_FUNC_DICT[sort_func])
+        print('...Done')
+        print()
+
+if __name__ == '__main__':
+    test_all_sorters()
