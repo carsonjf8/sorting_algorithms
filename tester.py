@@ -3,12 +3,14 @@ from selection_sort import selection_sort
 from insertion_sort import insertion_sort
 from bubble_sort import bubble_sort
 from merge_sort import merge_sort
+from radix_sort import radix_sort
 
 SORTING_FUNC_DICT = {
     'Selection Sort': selection_sort,
     'Insertion Sort': insertion_sort,
     'Bubble Sort': bubble_sort,
     'Merge Sort': merge_sort,
+    'Radix Sort': radix_sort,
 }
 
 TEST_CASES_INPUT = [
@@ -67,4 +69,5 @@ def generate_rand_tests(count: int, max_len: int, max_val: int) -> tuple[list, l
     return test_inputs, test_outputs
 
 if __name__ == '__main__':
+    #test_all_sorters('custom')
     test_all_sorters('random')
