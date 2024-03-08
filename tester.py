@@ -1,10 +1,12 @@
 from typing import Callable, List, NoReturn
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
+from bubble_sort import bubble_sort
 
 SORTING_FUNC_DICT = {
     'Selection Sort': selection_sort,
-    'Insertion Sort': insertion_sort
+    'Insertion Sort': insertion_sort,
+    'Bubble Sort': bubble_sort,
 }
 
 TEST_CASES_INPUT = [
@@ -21,15 +23,17 @@ TEST_CASES_OUTPUT = [
     [1, 2, 3, 4, 5],
 ]
 
-def test_case(sort_func: Callable, data: List, expected_output: List) -> NoReturn:
+def test_case(sort_func: Callable, arr: List, expected_output: List) -> NoReturn:
     try:
-        assert sort_func(data) == expected_output
+        output_arr = sort_func(arr)
+        print(output_arr == expected_output, output_arr, expected_output)
+        assert sort_func(arr) == expected_output
     except:
-        print(data, 'does not match', expected_output)
+        print(arr, 'does not match', expected_output)
 
 def test(sort_func: Callable) -> NoReturn:
-    for (input_data, sorted_data) in zip(TEST_CASES_INPUT, TEST_CASES_OUTPUT):
-        test_case(sort_func, input_data, sorted_data)
+    for (input_arr, sorted_arr) in zip(TEST_CASES_INPUT, TEST_CASES_OUTPUT):
+        test_case(sort_func, input_arr, sorted_arr)
 
 def test_all_sorters() -> NoReturn:
     for sort_func in SORTING_FUNC_DICT:
