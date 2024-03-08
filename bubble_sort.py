@@ -1,7 +1,5 @@
-from typing import List
-
 # Bubble Sort
-def bubble_sort(arr: List) -> List:
+def bubble_sort(arr: list) -> list:
     for i in range(len(arr)):
         swapped = False
         for j in range(len(arr) - i  - 2):

@@ -1,7 +1,5 @@
-from typing import List
-
 # Insertion Sort
-def insertion_sort(arr: List) -> List:
+def insertion_sort(arr: list) -> list:
     for i in range(len(arr) - 1):
         if arr[i + 1] < arr[i]:
             arr[i], arr[i + 1] = arr[i + 1], arr[i]

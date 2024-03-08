@@ -1,10 +1,8 @@
-from typing import List
-
 # Merge Sort
-def merge_sort(arr: List) -> List:
+def merge_sort(arr: list) -> list:
     return divide(arr)
 
-def divide(arr: List) -> List:
+def divide(arr: list) -> list:
     if len(arr) <= 1:
         return arr
     
@@ -13,7 +11,7 @@ def divide(arr: List) -> List:
     arr2 = divide(arr[split_index:])
     return merge(arr1, arr2)
 
-def merge(arr1: List, arr2: List) -> List:
+def merge(arr1: list, arr2: list) -> list:
     merged_arr = [None] * (len(arr1) + len(arr2))
     for i in range(len(merged_arr)):
         if len(arr1) == 0:

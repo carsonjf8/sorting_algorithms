@@ -1,4 +1,3 @@
-from typing import Callable, List, NoReturn
 import random
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
@@ -26,7 +25,7 @@ TEST_CASES_OUTPUT = [
     [1, 2, 3, 4, 5],
 ]
 
-def test_case(sort_func: Callable, arr: List, expected_output: List) -> NoReturn:
+def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
     try:
         output_arr = sort_func(arr)
         #print(output_arr == expected_output, output_arr, expected_output)
@@ -34,11 +33,11 @@ def test_case(sort_func: Callable, arr: List, expected_output: List) -> NoReturn
     except:
         print(output_arr, 'does not match', expected_output)
 
-def test(sort_func: Callable, test_input: List, test_output: List) -> NoReturn:
+def test(sort_func: callable, test_input: list, test_output: list) -> None:
     for (input_arr, sorted_arr) in zip(test_input, test_output):
         test_case(sort_func, input_arr, sorted_arr)
 
-def test_all_sorters(test_type) -> NoReturn:
+def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
     elif test_type == 'random':
@@ -53,7 +52,7 @@ def test_all_sorters(test_type) -> NoReturn:
         print('...Done')
         print()
 
-def generate_rand_tests(count: int, max_len: int, max_val: int) -> tuple[List, List]:
+def generate_rand_tests(count: int, max_len: int, max_val: int) -> tuple[list, list]:
     test_inputs = []
     test_outputs = []
 
