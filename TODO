@@ -1,6 +1,5 @@
 TODO:
     Bubble Sort
-    Insertion Sort
     Merge Sort
     Quick Sort
     Heap Sort
@@ -8,6 +7,9 @@ TODO:
     Sleep Sort
     Bogo Sort
     add option for whether to sort in place or not
+    add documentation to sorting algs
+    add reverse option
 
 Completed:
     Selection Sort
+    Insertion Sort
