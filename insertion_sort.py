@@ -1,19 +1,13 @@
 from typing import List
 
 # Insertion Sort
-def insertion_sort(data: List) -> List:
-    for i in range(len(data) - 1):
-        if data[i + 1] < data[i]:
-            temp = data[i]
-            data[i + 1] = data[i]
-            data[i] = temp
-
+def insertion_sort(arr: List) -> List:
+    for i in range(len(arr) - 1):
+        if arr[i + 1] < arr[i]:
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
             for j in range(i, 0, -1):
-                if data[j] < data[j - 1]:
-                    temp = data[j]
-                    data[j - 1] = data[j]
-                    data[j] = temp
+                if arr[j] < arr[j - 1]:
+                    arr[j], arr[j - 1] = arr[j - 1], arr[j]
                 else:
                     break
-    
-    return data
+    return arr
