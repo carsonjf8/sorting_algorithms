@@ -1,6 +1,5 @@
 TODO:
     Heap Sort
-    Bogo Sort
     add option for whether to sort in place or not
     add documentation to sorting algs
     add reverse option
@@ -13,3 +12,4 @@ Completed:
     Radix Sort
     Quick Sort
     Sleep Sort
+    Bogo Sort
