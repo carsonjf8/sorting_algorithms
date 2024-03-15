@@ -19,11 +19,3 @@ def sleep_sort(arr: list) -> list:
 def thread_run(val: int, arr: list) -> None:
     time.sleep(val)
     arr.append(val)
-
-import random
-def generate_rand_tests(max_len: int, max_val: int) -> tuple[list, list]:
-    case_len = random.randint(0, max_len)
-    case_input = []
-    for j in range(case_len):
-        case_input.append(random.randint(0, max_val))
-    return case_input, sorted(case_input)
