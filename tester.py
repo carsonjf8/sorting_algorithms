@@ -83,5 +83,5 @@ def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
         print(output_arr, 'does not match', expected_output)
 
 if __name__ == '__main__':
-    test_all_sorters('custom')
-    #test_all_sorters('random')
+    #test_all_sorters('custom')
+    test_all_sorters('random')
