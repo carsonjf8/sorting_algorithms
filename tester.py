@@ -37,7 +37,7 @@ def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
     elif test_type == 'random':
-        count = 5
+        count = 50
         max_len = 100
         max_val = 100
         test_input, test_output = generate_rand_tests(count, max_len, max_val)
