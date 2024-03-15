@@ -37,7 +37,7 @@ TEST_CASES_OUTPUT = [
 
 def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
-        print('Using custom tests')
+        print('Using custom tests\n')
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
     elif test_type == 'random':
         count = 1000
@@ -83,5 +83,5 @@ def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
         print(output_arr, 'does not match', expected_output)
 
 if __name__ == '__main__':
-    #test_all_sorters('custom')
-    test_all_sorters('random')
+    test_all_sorters('custom')
+    #test_all_sorters('random')
