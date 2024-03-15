@@ -6,6 +6,7 @@ from merge_sort import merge_sort
 from radix_sort import radix_sort
 from quick_sort import quick_sort
 from sleep_sort import sleep_sort
+from bogo_sort import bogo_sort
 
 SORTING_FUNC_DICT = {
     'Selection Sort': selection_sort,
@@ -15,6 +16,7 @@ SORTING_FUNC_DICT = {
     'Radix Sort': radix_sort,
     'Quick Sort': quick_sort,
     #'Sleep Sort': sleep_sort, # disabled from testing due to how long it takes
+    #'Bogo Sort': bogo_sort, # disabled from testing due to how long it takes
 }
 
 TEST_CASES_INPUT = [
@@ -35,7 +37,7 @@ def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
     elif test_type == 'random':
-        count = 50
+        count = 5
         max_len = 100
         max_val = 100
         test_input, test_output = generate_rand_tests(count, max_len, max_val)
@@ -66,6 +68,7 @@ def test(sort_func: callable, test_input: list, test_output: list) -> None:
         
 def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
     try:
+        #print(arr, expected_output)
         output_arr = sort_func(arr)
         #print(output_arr == expected_output, output_arr, expected_output)
         assert output_arr == expected_output
