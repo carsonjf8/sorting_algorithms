@@ -1,4 +1,6 @@
+import time
 import random
+
 from selection_sort import selection_sort
 from insertion_sort import insertion_sort
 from bubble_sort import bubble_sort
@@ -35,17 +37,22 @@ TEST_CASES_OUTPUT = [
 
 def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
+        print('Using custom tests')
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
     elif test_type == 'random':
-        count = 50
-        max_len = 100
-        max_val = 100
+        count = 1000
+        max_len = 1000
+        max_val = 1000
+        print('Using random tests: count={}, max_len={}, max_val={}\n'.format(count, max_len, max_val))
         test_input, test_output = generate_rand_tests(count, max_len, max_val)
     
     for sort_func in SORTING_FUNC_DICT:
         print('Testing ' + sort_func + '...')
+        time_start = time.time()
         test(SORTING_FUNC_DICT[sort_func], test_input, test_output)
-        print('...Done')
+        time_end = time.time()
+        total_time = time_end - time_start
+        print('...Done (' + str(total_time) + 's)')
         print()
 
 def generate_rand_tests(count: int, max_len: int, max_val: int) -> tuple[list, list]:
