@@ -29,18 +29,6 @@ TEST_CASES_OUTPUT = [
     [1, 2, 3, 4, 5],
 ]
 
-def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
-    try:
-        output_arr = sort_func(arr)
-        #print(output_arr == expected_output, output_arr, expected_output)
-        assert output_arr == expected_output
-    except:
-        print(output_arr, 'does not match', expected_output)
-
-def test(sort_func: callable, test_input: list, test_output: list) -> None:
-    for (input_arr, sorted_arr) in zip(test_input, test_output):
-        test_case(sort_func, input_arr, sorted_arr)
-
 def test_all_sorters(test_type: str) -> None:
     if test_type == 'custom':
         test_input, test_output = TEST_CASES_INPUT, TEST_CASES_OUTPUT
@@ -69,6 +57,18 @@ def generate_rand_tests(count: int, max_len: int, max_val: int) -> tuple[list, l
         test_outputs.append(sorted(case_input))
 
     return test_inputs, test_outputs
+
+def test(sort_func: callable, test_input: list, test_output: list) -> None:
+    for (input_arr, sorted_arr) in zip(test_input, test_output):
+        test_case(sort_func, input_arr.copy(), sorted_arr.copy())
+        
+def test_case(sort_func: callable, arr: list, expected_output: list) -> None:
+    try:
+        output_arr = sort_func(arr)
+        #print(output_arr == expected_output, output_arr, expected_output)
+        assert output_arr == expected_output
+    except:
+        print(output_arr, 'does not match', expected_output)
 
 if __name__ == '__main__':
     #test_all_sorters('custom')
