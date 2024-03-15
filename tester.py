@@ -4,6 +4,7 @@ from insertion_sort import insertion_sort
 from bubble_sort import bubble_sort
 from merge_sort import merge_sort
 from radix_sort import radix_sort
+from quick_sort import quick_sort
 
 SORTING_FUNC_DICT = {
     'Selection Sort': selection_sort,
@@ -11,6 +12,7 @@ SORTING_FUNC_DICT = {
     'Bubble Sort': bubble_sort,
     'Merge Sort': merge_sort,
     'Radix Sort': radix_sort,
+    'Quick Sort': quick_sort,
 }
 
 TEST_CASES_INPUT = [
