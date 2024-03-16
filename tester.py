@@ -7,6 +7,7 @@ from bubble_sort import bubble_sort
 from merge_sort import merge_sort
 from radix_sort import radix_sort
 from quick_sort import quick_sort
+from heap_sort import heap_sort
 from sleep_sort import sleep_sort
 from bogo_sort import bogo_sort
 
@@ -17,6 +18,7 @@ SORTING_FUNC_DICT = {
     'Merge Sort': merge_sort,
     'Radix Sort': radix_sort,
     'Quick Sort': quick_sort,
+    'Heap Sort': heap_sort,
     #'Sleep Sort': sleep_sort, # disabled from testing due to how long it takes
     #'Bogo Sort': bogo_sort, # disabled from testing due to how long it takes
 }
